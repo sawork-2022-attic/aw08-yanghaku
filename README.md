@@ -1,5 +1,20 @@
 # aw08
 
+change log:
+
+1. copy from aw07
+2. 修改pos-delivery, 维护每个订单的状态, 并且可以通过rest返回订单的状态信息
+3. 修改pos-gateway与pos-delivery整合, 通过访问gateway的 ```/deliveryIntegration/{orderId}``` 来获取delivery信息.
+
+
+
+使用spring integration优势:
+
+1. delivery可以与micropos解耦合, 可以随时替换成其他delivery服务.
+2. 可以利用任意消息协议(如http),  还可以利用其他消息协议加快数据传输.
+
+
+
 Run the project with `mvn spring-boot:run` and send request to `http://localhost:8080/check`. You should see an reponses in json format like the following.
 
 ```json
